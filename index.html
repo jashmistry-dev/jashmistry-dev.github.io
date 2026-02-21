@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Jash Mistry | Full Stack Developer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
 <style>
+
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;font-family:'Poppins',sans-serif;}
 
 body{
@@ -16,90 +19,112 @@ body{
   color:white;
 }
 
+/* HEADER */
+
 header{
   position:fixed;
   width:100%;
   top:0;
   background:rgba(2,6,23,0.9);
-  display:flex;
-  justify-content:space-between;
   padding:15px 8%;
   z-index:1000;
 }
 
-header h2{color:#22c55e;}
-
-nav a{
-  color:white;
-  margin-left:25px;
-  text-decoration:none;
-  font-size:14px;
+header h2{
+  background:linear-gradient(135deg,#4f46e5,#06b6d4);
+  -webkit-background-clip:text;
+  color:transparent;
 }
+
+/* SECTIONS */
 
 section{
-  padding:100px 8%;
-  min-height:100vh;
+  padding:90px 8%;
 }
+
+/* HERO */
 
 .hero{
+  min-height:100vh;
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
   flex-wrap:wrap;
+  gap:40px;
 }
 
-.hero-text h1{font-size:48px;}
-.hero-text h1 span{color:#4f46e5;}
+.hero-text{
+  max-width:600px;
+}
 
-.typing{color:#06b6d4;font-weight:bold;}
+.hero-text h1{
+  font-size:46px;
+}
+
+.hero-text h1 span{
+  background:linear-gradient(135deg,#4f46e5,#06b6d4);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.typing{
+  color:#06b6d4;
+  font-weight:bold;
+}
 
 .btn{
   display:inline-block;
   margin-top:20px;
+  margin-right:10px;
   padding:12px 26px;
   background:linear-gradient(135deg,#4f46e5,#06b6d4);
-  color:white;
   border-radius:30px;
   text-decoration:none;
+  color:white;
   font-weight:500;
   transition:0.3s;
-  box-shadow:0 5px 20px rgba(79,70,229,0.4);
 }
 
 .btn:hover{
   transform:translateY(-3px);
 }
 
-.hero img{
-  width:280px;
-  border-radius:20px;
+/* LOTTIE */
+
+.lottie{
+  width:380px;
+}
+
+/* HEADINGS */
+
+h2{
+  margin-bottom:30px;
+  font-size:28px;
+  background:linear-gradient(135deg,#4f46e5,#06b6d4);
+  -webkit-background-clip:text;
+  color:transparent;
 }
 
 /* SKILLS */
 
-h2{
-  margin-bottom:30px;
-  color:#22c55e;
-}
-
 .skills{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:15px;
 }
 
 .card{
   background:#0f172a;
-  padding:20px;
-  border-radius:15px;
-  transition:0.3s;
+  padding:15px;
+  border-radius:12px;
+  text-align:center;
+  font-size:14px;
   border:1px solid rgba(255,255,255,0.05);
+  transition:0.3s;
 }
 
 .card:hover{
-  transform:translateY(-10px);
   background:linear-gradient(135deg,#4f46e5,#06b6d4);
-  color:white;
 }
 
 /* PROJECT */
@@ -112,15 +137,10 @@ h2{
 .project-card{
   background:linear-gradient(135deg,#4f46e5,#06b6d4);
   padding:30px;
-  border-radius:20px;
+  border-radius:18px;
   max-width:500px;
-  width:100%;
   text-align:center;
-  transition:0.3s;
-}
-
-.project-card:hover{
-  transform:scale(1.05);
+  width:100%;
 }
 
 .project-btn{
@@ -141,35 +161,26 @@ footer{
   padding:20px;
   background:#020617;
 }
-  .profile-card{
-  display:flex;
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero{
+  text-align:center;
   justify-content:center;
-  align-items:center;
-  flex:1;
 }
 
-.profile-circle{
-  width:260px;
-  height:260px;
-  border-radius:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:70px;
-  font-weight:700;
-  color:white;
-  background:linear-gradient(135deg,#4f46e5,#06b6d4);
-  box-shadow:0 0 40px rgba(79,70,229,0.6),
-             0 0 80px rgba(6,182,212,0.4);
-  animation:float 4s ease-in-out infinite;
+.lottie{
+  width:280px;
 }
 
-/* floating animation */
-@keyframes float{
-  0%{transform:translateY(0);}
-  50%{transform:translateY(-20px);}
-  100%{transform:translateY(0);}
+.hero-text h1{
+  font-size:34px;
 }
+
+}
+
 </style>
 </head>
 
@@ -177,14 +188,9 @@ footer{
 
 <header>
   <h2>Jash Mistry</h2>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Project</a>
-  </nav>
 </header>
 
-<section id="home" class="hero">
+<section class="hero">
 
 <div class="hero-text">
   <h1>Hi, I'm <span>Jash Mistry</span></h1>
@@ -192,43 +198,51 @@ footer{
 
   <p>MCA student & Full Stack Developer based in Ahmedabad.</p>
 
-  <a href="https://www.linkedin.com/in/JashMistryDev" target="_blank" class="btn">LinkedIn</a>
-
-  <a href="https://github.com/jashmistry-dev" target="_blank" class="btn" style="margin-left:10px;">
-    GitHub
-  </a>
-
-  <a href="https://raw.githubusercontent.com/jashmistry-dev/jashmistry-dev/main/Jash_Mistry_Resume.pdf"
-     target="_blank"
-     class="btn"
-     style="margin-left:10px;">
-     Resume
-  </a>
+  <a href="https://www.linkedin.com" target="_blank" class="btn">LinkedIn</a>
+  <a href="https://github.com" target="_blank" class="btn">GitHub</a>
+  <a href="#" class="btn">Resume</a>
 </div>
-  
-<div class="profile-card">
-  <div class="profile-circle">
-    JM
-  </div>
-</div>
+
+<lottie-player
+  src="https://assets2.lottiefiles.com/packages/lf20_kyu7xb1v.json"
+  background="transparent"
+  speed="1"
+  class="lottie"
+  loop
+  autoplay>
+</lottie-player>
 
 </section>
 
-<section id="skills">
+<section>
+
 <h2>Skills</h2>
 
 <div class="skills">
-<div class="card">HTML / CSS / JavaScript</div>
-<div class="card">React / Node.js / Express</div>
-<div class="card">MongoDB / PostgreSQL / MySQL</div>
-<div class="card">Laravel / PHP / REST APIs</div>
+
+<div class="card">HTML</div>
+<div class="card">CSS</div>
+<div class="card">JavaScript</div>
+<div class="card">React</div>
+<div class="card">Node.js</div>
+<div class="card">Express</div>
+<div class="card">MongoDB</div>
+<div class="card">PostgreSQL</div>
+<div class="card">MySQL</div>
+<div class="card">Laravel</div>
+<div class="card">PHP</div>
+<div class="card">REST API</div>
+
 </div>
+
 </section>
 
-<section id="projects">
+<section>
+
 <h2>Featured Project</h2>
 
 <div class="projects">
+
 <div class="project-card">
 
 <h3>Expense Tracker</h3>
@@ -240,7 +254,9 @@ View Live Project
 </a>
 
 </div>
+
 </div>
+
 </section>
 
 <footer>
