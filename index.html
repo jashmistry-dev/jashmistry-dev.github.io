@@ -9,11 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;font-family:'Poppins',sans-serif;}
 
 body{
-  background:linear-gradient(120deg,#0f172a,#020617);
+  background:linear-gradient(120deg,#020617,#0b1120);
   color:white;
 }
 
@@ -21,15 +20,14 @@ header{
   position:fixed;
   width:100%;
   top:0;
-  background:rgba(2,6,23,0.8);
-  backdrop-filter:blur(10px);
+  background:rgba(2,6,23,0.9);
   display:flex;
   justify-content:space-between;
   padding:15px 8%;
   z-index:1000;
 }
 
-header h2{color:#60a5fa;}
+header h2{color:#22c55e;}
 
 nav a{
   color:white;
@@ -39,51 +37,33 @@ nav a{
 }
 
 section{
-  padding:80px 8%;
+  padding:100px 8%;
+  min-height:100vh;
 }
-
-/* HERO */
 
 .hero{
-  min-height:100vh;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
   flex-wrap:wrap;
 }
 
-.hero-text{
-  max-width:600px;
-}
+.hero-text h1{font-size:48px;}
+.hero-text h1 span{color:#4f46e5;}
 
-.hero-text h1{
-  font-size:42px;
-}
-
-.hero-text span{
-  color:#60a5fa;
-}
-
-.typing{
-  color:#a78bfa;
-  font-weight:600;
-}
-
-.hero-btns{
-  margin-top:25px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:15px;
-}
+.typing{color:#06b6d4;font-weight:bold;}
 
 .btn{
+  display:inline-block;
+  margin-top:20px;
   padding:12px 26px;
+  background:linear-gradient(135deg,#4f46e5,#06b6d4);
+  color:white;
   border-radius:30px;
   text-decoration:none;
-  color:white;
-  background:linear-gradient(135deg,#60a5fa,#a78bfa);
-  box-shadow:0 5px 20px rgba(96,165,250,0.4);
+  font-weight:500;
   transition:0.3s;
+  box-shadow:0 5px 20px rgba(79,70,229,0.4);
 }
 
 .btn:hover{
@@ -91,36 +71,35 @@ section{
 }
 
 .hero img{
-  width:260px;
+  width:280px;
   border-radius:20px;
-  margin-top:30px;
 }
 
 /* SKILLS */
 
 h2{
   margin-bottom:30px;
-  color:#60a5fa;
+  color:#22c55e;
 }
 
 .skills{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
 }
 
 .card{
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(12px);
-  padding:25px;
+  background:#0f172a;
+  padding:20px;
   border-radius:15px;
   transition:0.3s;
+  border:1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover{
-  transform:translateY(-8px);
-  background:linear-gradient(135deg,#60a5fa,#a78bfa);
-  color:#020617;
+  transform:translateY(-10px);
+  background:linear-gradient(135deg,#4f46e5,#06b6d4);
+  color:white;
 }
 
 /* PROJECT */
@@ -131,12 +110,17 @@ h2{
 }
 
 .project-card{
-  background:linear-gradient(135deg,#60a5fa,#a78bfa);
-  padding:35px;
+  background:linear-gradient(135deg,#4f46e5,#06b6d4);
+  padding:30px;
   border-radius:20px;
   max-width:500px;
-  text-align:center;
   width:100%;
+  text-align:center;
+  transition:0.3s;
+}
+
+.project-card:hover{
+  transform:scale(1.05);
 }
 
 .project-btn{
@@ -144,20 +128,10 @@ h2{
   margin-top:15px;
   background:white;
   color:#020617;
-  padding:10px 22px;
+  padding:10px 20px;
   border-radius:25px;
   text-decoration:none;
   font-weight:600;
-}
-
-/* CONTACT */
-
-.contact-box{
-  text-align:center;
-}
-
-.contact-box p{
-  margin-bottom:15px;
 }
 
 /* FOOTER */
@@ -166,32 +140,7 @@ footer{
   text-align:center;
   padding:20px;
   background:#020617;
-  margin-top:40px;
 }
-
-/* 📱 RESPONSIVE */
-
-@media(max-width:768px){
-
-.hero{
-  text-align:center;
-  justify-content:center;
-}
-
-.hero-text h1{
-  font-size:32px;
-}
-
-header{
-  padding:15px 5%;
-}
-
-nav{
-  display:none;
-}
-
-}
-
 </style>
 </head>
 
@@ -199,32 +148,40 @@ nav{
 
 <header>
   <h2>Jash Mistry</h2>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Project</a>
+  </nav>
 </header>
 
-<section class="hero">
+<section id="home" class="hero">
 
 <div class="hero-text">
   <h1>Hi, I'm <span>Jash Mistry</span></h1>
   <h3>I am a <span class="typing"></span></h3>
 
-  <p>MCA student & Full Stack Developer from Ahmedabad building modern web apps.</p>
+  <p>MCA student & Full Stack Developer based in Ahmedabad.</p>
 
-  <div class="hero-btns">
+  <a href="https://www.linkedin.com/in/JashMistryDev" target="_blank" class="btn">LinkedIn</a>
 
-    <a href="https://www.linkedin.com/in/JashMistryDev" target="_blank" class="btn">LinkedIn</a>
+  <a href="https://github.com/jashmistry-dev" target="_blank" class="btn" style="margin-left:10px;">
+    GitHub
+  </a>
 
-    <a href="https://github.com/jashmistry-dev" target="_blank" class="btn">GitHub</a>
-
-    <a href="https://raw.githubusercontent.com/jashmistry-dev/jashmistry-dev/main/Jash_Mistry_Resume.pdf" target="_blank" class="btn">Resume</a>
-
-  </div>
+  <a href="https://raw.githubusercontent.com/jashmistry-dev/jashmistry-dev/main/Jash_Mistry_Resume.pdf"
+     target="_blank"
+     class="btn"
+     style="margin-left:10px;">
+     Resume
+  </a>
 </div>
 
-<img src="https://i.imgur.com/2DhmtJ4.png">
+<img src="https://i.imgur.com/2DhmtJ4.png" alt="Jash Mistry"/>
 
 </section>
 
-<section>
+<section id="skills">
 <h2>Skills</h2>
 
 <div class="skills">
@@ -235,7 +192,7 @@ nav{
 </div>
 </section>
 
-<section>
+<section id="projects">
 <h2>Featured Project</h2>
 
 <div class="projects">
@@ -245,29 +202,11 @@ nav{
 
 <p>Track daily expenses with authentication & analytics dashboard.</p>
 
-<a href="https://college-expense-app.onrender.com/" target="_blank" class="project-btn">View Live Project</a>
+<a href="https://college-expense-app.onrender.com/" target="_blank" class="project-btn">
+View Live Project
+</a>
 
 </div>
-</div>
-</section>
-
-<section>
-<h2>Contact</h2>
-
-<div class="contact-box">
-
-<p>📧 jashmistry1721@gmail.com</p>
-
-<div class="hero-btns">
-
-<a href="mailto:jashmistry1721@gmail.com" class="btn">Send Email</a>
-
-<a href="https://github.com/jashmistry-dev" target="_blank" class="btn">GitHub</a>
-
-<a href="https://www.linkedin.com/in/JashMistryDev" target="_blank" class="btn">LinkedIn</a>
-
-</div>
-
 </div>
 </section>
 
