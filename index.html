@@ -264,7 +264,7 @@ View Live Project
 </footer>
 
 <script>
-const words=["Full Stack Developer","MERN Stack Developer","PERN Stack Developer","Chess competition Winner","Backend Developer"];
+const words=["Full Stack Developer","PERN Stack Developer","Chess competition Winner","MERN Stack Developer",];
 let i=0,j=0,currentWord="",isDeleting=false;
 
 function type(){
@@ -274,7 +274,7 @@ if(!isDeleting){
 document.querySelector(".typing").textContent=currentWord.substring(0,j++);
 if(j>currentWord.length){
 isDeleting=true;
-setTimeout(type,600);
+setTimeout(type,200);
 return;
 }
 }else{
@@ -284,7 +284,7 @@ isDeleting=false;
 i=(i+1)%words.length;
 }
 }
-setTimeout(type,50);
+setTimeout(type,30);
 }
 type();
 </script>
